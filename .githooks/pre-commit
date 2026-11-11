@@ -1,0 +1,17 @@
+#!/bin/sh
+ 
+echo "========================================"
+echo " Validation avant commit : Maven"
+echo "========================================"
+ 
+mvn -B clean verify
+RESULT=$?
+ 
+if [ $RESULT -ne 0 ]; then
+    echo "ECHEC : commit refuse."
+    echo "Corrigez les erreurs puis relancez git commit."
+    exit 1
+fi
+ 
+echo "SUCCES : validations reussies."
+exit 0

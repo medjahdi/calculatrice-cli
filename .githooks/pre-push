@@ -1,0 +1,18 @@
+#!/bin/sh
+ 
+echo "========================================"
+echo " Validation avant push : Maven"
+echo "========================================"
+ 
+mvn -B clean verify
+RESULT=$?
+ 
+if [ $RESULT -ne 0 ]; then
+    echo "ECHEC : push refuse."
+    echo "Aucun commit ne sera envoye par cette operation."
+    echo "Corrigez les erreurs puis relancez git push."
+    exit 1
+fi
+ 
+echo "SUCCES : push autorise."
+exit 0
