@@ -69,7 +69,7 @@
                     <archive>
                         <manifest>
                             <mainClass>
-                                dz.univ.calculatrice.App
+                                dz.univ.calculatrice.Main
                             </mainClass>
                         </manifest>
                     </archive>
